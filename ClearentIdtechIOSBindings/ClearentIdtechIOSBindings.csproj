@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC74F0E7-2E38-4A9E-B783-672DC043E7EE}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ClearentIdtechIOSBindings</RootNamespace>
+    <AssemblyName>ClearentIdtechIOSBindings</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\..\..\Documents\FrameworkBuilds\build\Release-iphonesimulator\ClearentIdtechIOSFramework.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IDTech.bundle\1.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\1u.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\2.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\2u.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\3.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\3u.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\4.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\4u.xml" />
+    <BundleResource Include="Resources\IDTech.bundle\BTPay 200 V1.00-EN.err" />
+    <BundleResource Include="Resources\IDTech.bundle\Info.plist" />
+    <BundleResource Include="Resources\IDTech.bundle\InfoPlist.strings" />
+    <BundleResource Include="Resources\IDTech.bundle\KernelLCD.kmsg" />
+    <BundleResource Include="Resources\IDTech.bundle\ResourceVersion.txt" />
+    <BundleResource Include="Resources\IDTech.bundle\UniPay V1.00-EN.err" />
+    <BundleResource Include="Resources\IDTech.bundle\errors-EN.err" />
+    <BundleResource Include="Resources\IDTech.bundle\grsiStatusCodes-EN.err" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>
